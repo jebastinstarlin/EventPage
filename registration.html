@@ -402,7 +402,7 @@ body{
                 <div class="container">
         <div class="form">
             <h2>Event Registration</h2>
-            <form>
+            <form id="eventForm">
                 <label>Name:</label>
                 <div class="name-row">
                     <input type="text" placeholder="Participant-1" required>
@@ -482,19 +482,26 @@ body{
 </div>
 <script>
 document.getElementById("registerBtn").addEventListener("click", function() {
-    const btn = this;
-    // Change button color and text
-    btn.classList.replace("btn-primary", "btn-success");
-    btn.textContent = "Submitted ✔";
-    btn.disabled = true;
+    const fileInput = document.querySelector('input[type="file"]');
+    
+    if (!fileInput.files.length) {
+        alert("Please upload the payment screenshot!"); 
+        fileInput.focus();
+        return;
+    }
 
-    // Redirect to confirmation page after short delay
+    this.classList.replace("btn-primary", "btn-success");
+    this.textContent = "Submitted ✔";
+    this.disabled = true;
+
     setTimeout(() => {
         window.location.href = "confirmation.html";
     }, 500);
 });
+
 </script>
 
 </body>
 </html>
+
 
