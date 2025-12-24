@@ -442,14 +442,43 @@ body{
                 <label>food:</label>
                 <div class="food-group">
                   <div class="food-options">
-                    <label>
-                      <input type="radio" name="food" value="veg" required>
-                       veg
-                   </label>
-                   <label>
-                      <input type="radio" name="food" value="non-veg">
-                      non-veg
-                   </label>
+                    <label>Veg</label>
+    <select id="veg" onchange="updateFromVeg()">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
+
+    <br><br>
+
+    <label>Non-Veg</label>
+    <select id="nonveg" onchange="updateFromNonVeg()">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
+</div>
+
+<script>
+const total = 2;
+
+function updateFromVeg() {
+    const veg = document.getElementById("veg").value;
+    if (veg !== "") {
+        document.getElementById("nonveg").value = total - veg;
+    }
+}
+
+function updateFromNonVeg() {
+    const nonveg = document.getElementById("nonveg").value;
+    if (nonveg !== "") {
+        document.getElementById("veg").value = total - nonveg;
+    }
+}
+</script>
+
+</body>
+</html>
                  </div>
               </div>
                 <label class="qr">Scan & Pay</label>
@@ -504,5 +533,6 @@ document.getElementById("registerBtn").addEventListener("click", function() {
 
 </body>
 </html>
+
 
 
