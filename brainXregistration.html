@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -457,7 +456,7 @@ body{
         <option value="1">1</option>
         <option value="2">2</option>
     </select>
-</div>
+
 
 <script>
 const total = 2;
@@ -476,13 +475,10 @@ function updateFromNonVeg() {
     }
 }
 </script>
-
-</body>
-</html>
                  </div>
               </div>
                 <label class="qr">Scan & Pay</label>
-                <img src="wikipedia.png"alt="Payment QR"class="qr-img">
+                <img src="qr.png.jpeg"alt="Payment QR"class="qr-img">
                 <div class="amount">
                  <div class="row">
                       <span>Per Person</span>
@@ -515,7 +511,7 @@ document.getElementById("registerBtn").addEventListener("click", function() {
     const fileInput = document.querySelector('input[type="file"]');
     
     if (!fileInput.files.length) {
-        alert("Please upload the payment screenshot!"); 
+        alert("Please upload the payment screenshot!"); // custom warning
         fileInput.focus();
         return;
     }
@@ -531,8 +527,6 @@ document.getElementById("registerBtn").addEventListener("click", function() {
 
 </script>
 
+
 </body>
 </html>
-
-
-
